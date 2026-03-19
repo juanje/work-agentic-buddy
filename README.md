@@ -2,7 +2,7 @@
 
 A persistent, file-based memory system for AI coding assistants. The user does brain dumps throughout the day — tasks, decisions, ideas, context, random thoughts — and the AI agent captures, organizes, and maintains everything in Markdown files.
 
-> **Note:** Delete this README after setup. It's reference documentation for the human, not for the agent. Keeping it adds unnecessary tokens to the agent's context and can distract from operational files.
+> **Note:** After setup, delete this README, the LICENSE file, and the `scripts/` directory (once the scripts are copied to their final location, e.g. `~/.local/bin/`). These are reference files for the human, not for the agent. Keeping them adds unnecessary tokens to the agent's context and can distract from operational files.
 
 ## Design principles
 
@@ -236,17 +236,21 @@ This system works with any AI editor that reads `AGENTS.md` from the workspace r
 
 For Claude Code, copy `.cursor/commands/` to `.claude/commands/`.
 
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
 ## 🤖 AI Tools Disclaimer
 
 This project was developed with the assistance of artificial intelligence tools:
 
 **Tools used:**
 - **Cursor**: Code editor with AI capabilities
-- **Claude-4-Sonnet**: Anthropic's language model
+- **Claude-4.6-Opus**: Anthropic's language model
 
 **Division of responsibilities:**
 
-**AI (Cursor + Claude-4-Sonnet)**:
+**AI (Cursor + Claude-4.6-Opus)**:
 - 🔧 Initial code prototyping
 - 📝 Generation of examples and test cases
 - 🐛 Assistance in debugging and error resolution
