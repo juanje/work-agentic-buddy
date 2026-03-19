@@ -83,6 +83,10 @@ pip install did
 [general]
 email = your.email@example.com
 
+[git]
+type = git
+apps = /path/to/your/repos/*
+
 [github]
 type = github
 url = https://api.github.com/
@@ -226,11 +230,11 @@ If you need a new category of knowledge, create a directory under `brain/` and a
 This system works with any AI editor that reads `AGENTS.md` from the workspace root:
 
 - **Cursor** — full support (AGENTS.md + .cursor/commands/)
-- **Claude Code** — full support (AGENTS.md + .claude/commands/ + hooks)
+- **Claude Code** — full support (AGENTS.md + .claude/commands/)
 - **GitHub Copilot** — reads AGENTS.md
 - **Windsurf, Zed, RooCode** — reads AGENTS.md
 
-For Claude Code, copy `.cursor/commands/` to `.claude/commands/` and optionally configure SessionEnd hooks for automatic conversation processing.
+For Claude Code, copy `.cursor/commands/` to `.claude/commands/`.
 
 ## 🤖 AI Tools Disclaimer
 
