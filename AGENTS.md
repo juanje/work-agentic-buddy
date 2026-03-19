@@ -78,6 +78,7 @@ Update `last_accessed` and increment `access_count` when you read or modify a fi
 - [capture-item](skills/capture-item.md) — Detailed classification procedure for complex captures: items needing multiple destinations, batch processing from meeting dumps, or unclear classification. For simple captures (one task → Inbox), the Core Behavior above is enough.
 - [weekly-review](skills/weekly-review.md) — Compiles the week's work (logs + board), reviews and cleans the board, prepares next week's focus. Use when the user says "weekly review", "what did I do this week", or for broader reviews ("this quarter", "for my manager").
 - [next-task](skills/next-task.md) — Shows the next task to work on with full context, plus the rest of the queue. Use when the user says "next", "what's next", "what should I work on now", or runs `/next`.
+- [sync-board](skills/sync-board.md) — Lightweight mid-day sync: cross-references board with Jira, detects resolved/unblocked items, refreshes Active context. Use when the user says "sync", "refresh", "update board status", or runs `/sync`.
 
 ## Getting work data
 

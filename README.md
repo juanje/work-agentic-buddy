@@ -43,6 +43,7 @@ work_brain/
 │   ├── capture-item.md          → Interactive: complex item classification.
 │   ├── weekly-review.md         → Interactive: weekly/quarterly review.
 │   ├── next-task.md             → Interactive: show next task with context.
+│   ├── sync-board.md            → Interactive: lightweight mid-day board sync.
 │   ├── process-conversation.md  → Triggered: brain dump → structured log.
 │   └── sleep-maintenance.md     → Triggered: deep maintenance cycle (7 phases).
 ├── brain/
@@ -62,7 +63,8 @@ work_brain/
     ├── standup.md               → /standup — standup summary.
     ├── weekly.md                → /weekly — weekly review.
     ├── maintenance.md           → /maintenance — deep maintenance cycle.
-    └── next.md                  → /next — show next task.
+    ├── next.md                  → /next — show next task.
+    └── sync.md                  → /sync — quick board sync.
 ```
 
 ## Tool setup
@@ -186,11 +188,16 @@ Talk to the agent naturally. It will:
 | `/next` | Shows the next task with full context |
 | `/reflect` | Processes the conversation into a structured daily log |
 | `/weekly` | Compiles the week's work, cleans the board, plans next week |
+| `/sync` | Quick board sync: cross-references board with Jira, detects changes |
 | `/maintenance` | Runs deep maintenance: compaction, pruning, promotion, hygiene |
+
+### Board sync
+
+Run `/sync` during the day to keep the board current. It cross-references board items with Jira status, detects resolved or unblocked items, and refreshes the Active context section in AGENTS.md. Lightweight and fast — designed to be run multiple times a day.
 
 ### Maintenance cycle
 
-Run `/maintenance` periodically (daily or weekly). It handles:
+Run `/maintenance` at the end of the day or weekly. It handles the deeper work:
 1. **Log compaction** — archives old logs after extracting knowledge
 2. **Pruning** — moves unused brain files to archive
 3. **Promotion** — updates Active Context in AGENTS.md based on usage
