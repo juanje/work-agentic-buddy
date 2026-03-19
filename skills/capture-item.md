@@ -1,0 +1,59 @@
+---
+last_accessed: YYYY-MM-DD
+access_count: 0
+created: YYYY-MM-DD
+---
+
+# Skill: Capture item
+
+## When to use
+
+Use for complex captures that need more thought than the quick capture described
+in AGENTS.md Core Behavior. Examples: items that should go to multiple destinations,
+batch processing from a meeting dump, or unclear classification.
+
+For simple, obvious captures (a task → Inbox, an idea → Parked), the Core Behavior
+in AGENTS.md is sufficient — don't read this skill for those.
+
+## Procedure
+
+### 1. Identify the item type
+
+- **Task** (something to do) → `board/BOARD.md` Inbox
+- **Request from another team** → board Inbox + `brain/requests/YYYY-MM-DD_short-description.md` with context
+- **Bug or known error** → board Inbox + `brain/concepts/` if it's a pattern worth documenting
+- **Decision and its reasoning** → `brain/projects/<project>.md` or `brain/concepts/`
+- **Meeting notes** → `brain/projects/<project>.md` under the relevant project
+- **Lesson learned** → `brain/concepts/`
+- **Improvement idea / tech debt** (concrete, actionable) → `board/BOARD.md` Parked
+- **Unformed idea / project concept / draft proposal** → `brain/ideas/YYYY-MM-DD_short-description.md` (or `_scratchpad.md` for one-liners)
+
+### 2. Capture with context
+
+For board items, use the standard format:
+
+```
+- [ ] Short description | added: YYYY-MM-DD
+  - Context: why this matters, what it blocks, who asked, etc.
+```
+
+For `brain/` files, create with frontmatter:
+
+```yaml
+---
+last_accessed: YYYY-MM-DD
+access_count: 1
+created: YYYY-MM-DD
+---
+```
+
+### 3. Confirm
+
+Tell the user what was captured and where: "Captured [X] in [location]."
+
+### 4. Prioritization
+
+If the item seems urgent or high priority:
+- Ask: "This seems important. Should it go directly to Next Actions or Doing?"
+- If it clearly blocks other work, suggest moving it up.
+- If unclear, leave in Inbox for triage.
