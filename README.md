@@ -64,7 +64,8 @@ work_brain/
     ├── weekly.md                → /weekly — weekly review.
     ├── maintenance.md           → /maintenance — deep maintenance cycle.
     ├── next.md                  → /next — show next task.
-    └── sync.md                  → /sync — quick board sync.
+    ├── sync.md                  → /sync — quick board sync.
+    └── refresh.md               → /refresh — re-read AGENTS.md in long conversations.
 ```
 
 ## Tool setup
@@ -189,6 +190,7 @@ Talk to the agent naturally. It will:
 | `/reflect` | Processes the conversation into a structured daily log |
 | `/weekly` | Compiles the week's work, cleans the board, plans next week |
 | `/sync` | Quick board sync: cross-references board with Jira, detects changes |
+| `/refresh` | Re-reads AGENTS.md — use when the agent loses context in long conversations |
 | `/maintenance` | Runs deep maintenance: compaction, pruning, promotion, hygiene |
 
 ### Board sync

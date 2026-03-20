@@ -9,7 +9,7 @@ created: YYYY-MM-DD
 ## When to use
 
 Lightweight mid-day sync to keep the board and Active context current.
-Use when the user says "sync", "refresh", "update board status", or runs `/sync`.
+Use when the user says "sync", "update board status", or runs `/sync`.
 Can be run multiple times a day — designed to be fast (seconds, not minutes).
 
 NOT a replacement for `sleep-maintenance`, which does deep end-of-day work
