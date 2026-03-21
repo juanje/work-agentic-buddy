@@ -37,37 +37,49 @@ Then tell the user (in their language):
 >
 > After that, the system will be ready to use. You can start brain-dumping tasks, ideas, and notes right away.
 
-### Step 2: Gather user profile
+### Step 2: Get to know the user
 
-Ask these questions **one group at a time**, not all at once. Adapt based on answers — skip what's obvious, dig into what matters.
+Start with a warm, conversational tone. This is a first meeting — get to know the person before diving into work details. Ask **one group at a time**, wait for answers, and adapt naturally.
 
-**Role and team:**
-- What's your role? (e.g., software engineer, tech lead, product manager)
+**Who are you?** (start here, always)
+- What's your name?
+- Where do you work?
+- What do you do? (open-ended — let them describe it in their own words)
+- Anything you'd like to share about yourself? Interests, how you like to work, what matters to you... Whatever feels relevant. (This is optional and open — some people share a lot, others prefer to keep it brief. Both are fine.)
+
+After this first exchange, reflect back briefly what you understood and ask:
+
+> Want to give me more detail about your role, team, tech stack, and tools now? Or would you prefer to skip that and let it fill in naturally as we work together?
+
+If they want to continue, proceed with the groups below. If they prefer to skip, jump to Step 3 with whatever you have.
+
+**Role and team** (optional now):
+- What's your role specifically? (e.g., senior engineer, tech lead, product manager)
 - What team are you on?
 - Who's your manager? (optional, useful for reviews)
 
-**Technical context:**
+**Technical context** (optional now):
 - What's your main technical focus? (e.g., CI/CD, backend, infrastructure)
 - Key technologies you work with daily?
 - What are your main projects or repos? (2-3 is enough to start)
 
-**Tools:**
+**Tools** (optional now):
 - What issue tracker do you use? (Jira, GitLab Issues, GitHub Issues, Bugzilla, etc.)
 - What Git platform? (GitLab, GitHub, Bitbucket, etc.)
 - Do you already have [`did`](https://github.com/psss/did) installed? (If not, note it for later — it's optional but recommended.)
 
-**Work style:**
+**Work style** (optional now):
 - How would you describe your typical day? (Focused deep work? Lots of context switches? Firefighting?)
 - Do you work in sprints? If so, how long?
 - Any recurring meetings or rituals? (standups, sprint planning, retros)
 
-**Communication:**
+**Communication** (optional now):
 - What language do you prefer to chat in? (All generated content will be in English regardless.)
 - How do you like information presented? (Direct and brief? Detailed? Structured?)
 
 ### Step 3: Write agent_brain/identity/USER.md
 
-Using the answers, fill in `agent_brain/identity/USER.md`. Follow the template structure already in the file but replace the placeholder comments with real content. Be concise — this file is reference, not a biography.
+Using the answers, fill in `agent_brain/identity/USER.md`. Follow the template structure already in the file but replace the placeholder comments with real content. Be concise — this file is reference, not a biography. If the user skipped the detailed questions, fill in what you have and leave the rest as placeholders — it will fill in over time.
 
 ### Step 4: Configure tools (if applicable)
 

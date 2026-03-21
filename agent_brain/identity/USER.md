@@ -6,6 +6,15 @@ created: YYYY-MM-DD
 
 # User profile
 
+## About
+
+- **Name:** <!-- First name or however they prefer to be called -->
+- **Company:** <!-- Where you work -->
+- **What you do:** <!-- In your own words — may be more nuanced than a job title -->
+
+<!-- Anything else you'd like to share: interests, how you like to work, what
+     matters to you. This section grows organically from conversation. -->
+
 ## Professional context
 
 - **Role:** <!-- e.g. Software engineer, Tech Lead, Product Manager -->
