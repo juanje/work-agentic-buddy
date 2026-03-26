@@ -81,6 +81,12 @@ the "forgetting" that the weekly cycle only flags.
 **Exception:** Never move or prune files in `agent_brain/identity/`,
 `agent_brain/skills/`, or `work/`. Those require human decision.
 
+**Why archive, not delete:** Archive keeps files indexable by the editor — a
+search can still surface them even when the agent doesn't remember they exist
+(passive recognition). Deletion removes them from the workspace entirely;
+only git history preserves them, and that requires knowing the file existed
+(active recall). Prefer archiving over deletion.
+
 ---
 
 ### Phase 3: Prune unused learned skills and rules

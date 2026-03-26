@@ -155,6 +155,18 @@ In neuroscience, Hebb's principle states that neurons that fire together wire to
 
 Every file tracks when it was last accessed and how often. A periodic maintenance cycle uses these metrics to **promote** frequently-used files to the agent's active context (making them immediately visible) and **archive** files that haven't been touched in weeks. The agent's attention automatically mirrors what's actually relevant to your work right now, without manual curation.
 
+### Memory architecture: three tiers
+
+The file structure maps to a biological memory model with three levels of accessibility:
+
+| Tier | Location | Biological analog | Accessibility |
+|---|---|---|---|
+| **Working memory** | `AGENTS.md` (Active context, Rules, Skills list) | Prefrontal cortex | Always loaded. The agent sees this every conversation. |
+| **Long-term memory** | `agent_brain/` (projects, concepts, teams, ideas) | Hippocampus | Accessible on demand. Frequently accessed files get promoted to Active context (closer to working memory). |
+| **Remote memory** | `agent_brain/archive/` | Remote hippocampal traces | Not actively recalled, but still **indexable** — the editor can surface archived content via search even when the agent doesn't remember it exists. |
+
+The critical distinction between archive and deletion: archived files remain in the workspace where a search can find them (**passive recognition** — "I forgot I knew this, but a search reminded me"). Deleted files only exist in git history, which requires knowing they existed in the first place (**active recall**). This is why the system archives before deleting.
+
 ### Progressive disclosure: load only what's needed
 
 The agent doesn't read everything at startup. It reads a lightweight index file (`AGENTS.md`, ~150 lines) that contains just enough to know where things are and when to look deeper. Skills, project context, and knowledge files are loaded on demand — only when a task requires them.
