@@ -115,11 +115,13 @@ These tools are configured during the interactive setup. If you don't use Jira o
 The system works with any AI agent that reads `AGENTS.md` from the workspace root:
 
 - **Cursor** — full support (AGENTS.md + slash commands)
-- **Claude Code** — full support (AGENTS.md + commands)
+- **Claude Code** — full support via `CLAUDE.md` symlink + `.claude/commands/` symlinks (pre-created)
 - **GitHub Copilot** — reads AGENTS.md
 - **Windsurf, Zed, Gemini CLI, RooCode** — reads AGENTS.md
 
-Slash commands are provided for Cursor (`.cursor/commands/`). For Claude Code, copy them to `.claude/commands/`. For other agents, trigger workflows by asking directly.
+Slash commands are provided for Cursor (`.cursor/commands/`). Claude Code commands are pre-created as symlinks in `.claude/commands/` pointing to the Cursor originals — one source of truth, both agents supported. For other agents, trigger workflows by asking directly.
+
+**Note:** Claude Code reads `CLAUDE.md`, not `AGENTS.md`. The included `CLAUDE.md` symlink ensures both files resolve to the same content. A `.cursorignore` file prevents Cursor from double-indexing the symlinked files.
 
 ## Customization
 

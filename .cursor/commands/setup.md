@@ -166,7 +166,7 @@ Based on the tools the user has (or doesn't have):
 Check what editor/agent the user is running:
 
 - **Cursor**: `.cursor/commands/` is already set up. No action needed.
-- **Claude Code**: Copy `.cursor/commands/` to `.claude/commands/`.
+- **Claude Code**: `CLAUDE.md` symlink and `.claude/commands/` symlinks are pre-created. Verify they resolve correctly (`ls -la CLAUDE.md .claude/commands/`). No copy needed.
 - **Other agents**: The slash commands won't work, but the skills can be triggered by asking the agent directly (e.g., "run a standup", "do a weekly review"). No changes needed.
 
 ### Step 8: Activate the system
