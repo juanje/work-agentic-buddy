@@ -166,7 +166,23 @@ Based on the tools the user has (or doesn't have):
 Check what editor/agent the user is running:
 
 - **Cursor**: `.cursor/commands/` is already set up. No action needed.
-- **Claude Code**: `CLAUDE.md` symlink and `.claude/commands/` symlinks are pre-created. Verify they resolve correctly (`ls -la CLAUDE.md .claude/commands/`). No copy needed.
+- **Claude Code**: `CLAUDE.md` symlink and `.claude/commands/` symlinks are pre-created. Verify they resolve correctly (`ls -la CLAUDE.md .claude/commands/`). No copy needed. Additionally, create `.claude/settings.local.json` with permissions for the tools configured in Steps 4-6, so Claude Code doesn't ask for permission on every call:
+  ```json
+  {
+    "permissions": {
+      "allow": [
+        "Bash(did:*)",
+        "Bash(jira-pending:*)",
+        "Bash(jira-detail:*)",
+        "Bash(git add:*)",
+        "Bash(git commit:*)",
+        "Bash(ls:*)",
+        "Bash(mkdir:*)"
+      ]
+    }
+  }
+  ```
+  Adjust the list based on which tools the user actually configured. Remove entries for tools not installed.
 - **Other agents**: The slash commands won't work, but the skills can be triggered by asking the agent directly (e.g., "run a standup", "do a weekly review"). No changes needed.
 
 ### Step 8: Activate the system
