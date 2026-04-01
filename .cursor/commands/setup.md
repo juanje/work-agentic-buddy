@@ -81,6 +81,8 @@ If they want to continue, proceed with the groups below. If they prefer to skip,
 
 Using the answers, fill in `agent_brain/identity/USER.md`. Follow the template structure already in the file but replace the placeholder comments with real content. Be concise — this file is reference, not a biography. If the user skipped the detailed questions, fill in what you have and leave the rest as placeholders — it will fill in over time.
 
+If the conversation was conducted in a non-English language (either specified via `/setup <language>` or detected from the user's messages), capture the chat language preference in USER.md → Preferences (or Communication preferences). Example: `- **Chat language:** Spanish`. This ensures future sessions (especially bare commands like `/daily`) reply in the right language.
+
 ### Step 3b: Personalize the agent (optional)
 
 After writing USER.md, offer the user a chance to customize the agent:
