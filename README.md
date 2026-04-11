@@ -55,7 +55,7 @@ When you start a new conversation, the agent automatically checks for today's lo
 | `/monthly` | Deep maintenance: pruning, deep generalization, contradiction detection, structure review |
 | `/refresh` | Re-reads AGENTS.md — useful when the agent loses context in long conversations |
 
-These commands are slash commands in Cursor and Claude Code. Maintenance commands (`/reflect`, `/daily`, `/weekly`, `/monthly`) inject their skill file directly and require slash command support. Other skills (standup, next, sync) are listed in `AGENTS.md` and respond to natural language triggers with any agent.
+These commands are available as slash commands in Cursor and Claude Code. For other agents, trigger them by asking directly (e.g., "do a weekly review").
 
 ## The board
 
@@ -91,7 +91,7 @@ Specific concepts that share an underlying pattern get abstracted into general c
 └── agent_brain/
     ├── identity/
     │   ├── USER.md              → Your work profile and preferences.
-    │   └── SOUL.md              → Agent identity, values, and limits.
+    │   └── SOUL.md              → Agent identity and character — who the agent is.
     ├── observations.md          → Learning journal: raw observations from /reflect.
     ├── skills/                  → Reusable procedures, loaded on demand.
     ├── projects/                → Active project context and decisions.
@@ -120,7 +120,7 @@ The system works with any AI agent that reads `AGENTS.md` from the workspace roo
 - **GitHub Copilot** — reads AGENTS.md
 - **Windsurf, Zed, Gemini CLI, RooCode** — reads AGENTS.md
 
-Slash commands are provided for Cursor (`.cursor/commands/`). Claude Code commands are pre-created as symlinks in `.claude/commands/` pointing to the Cursor originals — one source of truth, both agents supported. Content-triggered skills (listed in the Skills section of `AGENTS.md`) work with any agent. Maintenance commands require slash command support.
+Slash commands are provided for Cursor (`.cursor/commands/`). Claude Code commands are pre-created as symlinks in `.claude/commands/` pointing to the Cursor originals — one source of truth, both agents supported. For other agents, trigger workflows by asking directly.
 
 **Note:** Claude Code reads `CLAUDE.md`, not `AGENTS.md`. The included `CLAUDE.md` symlink ensures both files resolve to the same content. A `.cursorignore` file prevents Cursor from double-indexing the symlinked files.
 
@@ -133,6 +133,16 @@ Skills are reusable procedures in `agent_brain/skills/`. Create a new `.md` file
 ### Adding brain directories
 
 The agent creates new directories inside `agent_brain/` as needed based on use. You can also create them manually — just add the new directory to the "Where to find things" section in `AGENTS.md` with a description of when the agent should look there.
+
+### How the identity files work together
+
+The system has three layers of instruction, each with a different role:
+
+- **`SOUL.md`** describes WHO the agent is — character traits, not procedures. Keep it short and coherent; everything should connect. Each trait is a deep attractor that guides behavior across all situations. When you edit SOUL.md, write identity descriptions ("you value X"), not commands ("do X").
+- **`AGENTS.md`** describes WHAT to do in specific contexts — operational rules with WHY. The reasoning enables the agent to generalize to situations the rule didn't explicitly cover. When adding rules, always include the purpose: `[rule]. [why — what it prevents, enables, or protects]`.
+- **Skills** describe HOW to execute specific procedures — steps with purpose. An agent that understands why a step exists can adapt when the exact procedure doesn't fit. When writing skills, include the purpose of non-obvious steps and distinguish fixed steps from judgment calls.
+
+The `/setup` command personalizes interaction style (how the agent communicates) but preserves character traits (what it values) — these are the foundation that enables good judgment in novel situations.
 
 ### Adapting to different tools
 
@@ -205,7 +215,15 @@ This is how the system develops judgment, not just memory. A repeated pattern be
 
 The agent's behavior is governed primarily by identity (`SOUL.md`), not by rules. `SOUL.md` describes *who the agent is* — its character, values, and stance — rather than enumerating what it should or shouldn't do. Rules in `AGENTS.md` handle specific known failure modes (guardrails), but the agent's general orientation comes from character.
 
-This distinction matters for novel situations. An agent following rules fails silently when it encounters a case no rule covers. An agent with internalized character makes a judgment call consistent with who it is. In complex systems terms: `SOUL.md` is an attractor basin that shapes behavior across the full state space, while rules are boundary conditions that prevent specific known failures.
+This distinction matters because instructions sit on a spectrum, each level progressively better at enabling judgment in novel situations:
+
+1. **Bare rule** — "Never do X." Predictable but brittle: breaks in any situation the rule didn't anticipate.
+2. **Rule with WHY** — "Do Y, because Z." The agent understands the purpose and can generalize to situations the rule didn't cover. Research confirms that LLMs follow rules better when given reasoning, because they can create meta-rules from the explanation.
+3. **Character** — "You are someone who values Z." No rule needed per situation — the agent has the adaptive capacity to generate appropriate responses in any context, including ones never anticipated.
+
+An agent following rules fails silently when it encounters a case no rule covers. An agent with internalized character makes a judgment call consistent with who it is — identity and character act as a cognitive offloader, guiding behavior in novel situations without having to search for a matching rule. In complex systems terms: `SOUL.md` is an attractor basin that shapes behavior across the full state space, while rules in `AGENTS.md` are boundary conditions that prevent specific known failures. Skills in `agent_brain/skills/` are adaptable techniques — procedures with purpose that the agent can modify when the exact steps don't fit.
+
+Each layer enables the next: character guides rule interpretation, rules with WHY enable generalization, skills with purpose enable adaptation. The maintenance cycles evolve this system over time: rules that prove universally important get promoted to character traits during `/monthly` (Hebbian internalization), while unused rules decay and get archived.
 
 ### Emergence from simple rules
 
@@ -244,7 +262,7 @@ CLAUDE_TOOLS="Bash(readonly=false),Read,Write,Edit,Glob,Grep"
 
 Log files land in `logs/` alongside the daily conversation logs.
 
-**Cursor-first.** The system is developed and tested primarily in Cursor. Claude Code is fully functional via pre-created symlinks (`CLAUDE.md`, `.claude/commands/`), but some behavioral differences exist (see the project's production notes for details). The core system (AGENTS.md + file structure) works with any agent that reads `AGENTS.md`, but maintenance commands (`/reflect`, `/daily`, `/weekly`, `/monthly`) require slash command support.
+**Cursor-first.** The system is developed and tested primarily in Cursor. Claude Code is fully functional via pre-created symlinks (`CLAUDE.md`, `.claude/commands/`), but some behavioral differences may exist. For other agents, workflows must be triggered by asking directly (e.g., "do a weekly review"). The core system (AGENTS.md + skills + file structure) works everywhere.
 
 ## Acknowledgments
 
