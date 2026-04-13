@@ -81,7 +81,7 @@ the "forgetting" that the weekly cycle only flags.
      It was important once — the user should decide.
 
 **Exception:** Never move or prune files in `agent_brain/identity/`,
-`agent_brain/skills/`, or `work/`. Those require human decision.
+`agent_brain/skills/`, or `user/`. Those require human decision.
 
 **Why archive, not delete:** Archive keeps files indexable by the editor — a
 search can still surface them even when the agent doesn't remember they exist
@@ -306,5 +306,5 @@ Review `agent_brain/identity/` files:
 2. Git commit:
 
 ```bash
-git add AGENTS.md agent_brain/ logs/ work/ && git commit -m "monthly: YYYY-MM-DD" 2>/dev/null || true
+git add AGENTS.md agent_brain/ logs/ user/ && git commit -m "monthly: YYYY-MM-DD" 2>/dev/null || true
 ```

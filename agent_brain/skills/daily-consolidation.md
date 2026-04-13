@@ -70,7 +70,7 @@ Keep it brief — this makes the weekly review's job easier.
 
 #### 3. Board snapshot
 
-Read `work/BOARD.md`. Quick checks only:
+Read `user/BOARD.md`. Quick checks only:
 - Is Doing clean for tomorrow? Anything that should move to Done or back
   to Next Actions?
 - Any items that need attention flagged during the day?
@@ -208,7 +208,7 @@ Each file entry has two layers — **hot data** inline and a **read trigger**:
 ```
 
 Examples:
-- `[Board](work/BOARD.md) — task management and priorities. Read when planning, triaging, or checking what to work on next.`
+- `[Board](user/BOARD.md) — task management and priorities. Read when planning, triaging, or checking what to work on next.`
 - `[Project X](path) — blocked on API approval. Read when discussing project X or planning sprints.`
 
 Avoid: accumulated history, internal scores, operational detail that only
@@ -221,5 +221,5 @@ matters during maintenance.
 #### 8. Git commit
 
 ```bash
-git add AGENTS.md agent_brain/ logs/ work/BOARD.md && git commit -m "daily: YYYY-MM-DD" 2>/dev/null || true
+git add AGENTS.md agent_brain/ logs/ user/BOARD.md && git commit -m "daily: YYYY-MM-DD" 2>/dev/null || true
 ```

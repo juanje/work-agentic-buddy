@@ -66,7 +66,7 @@ if stale.
 ## Limits
 
 - Never delete files from `agent_brain/` without archiving first.
-- Never auto-archive or prune files in `work/` — the user controls that space.
+- Never auto-archive or prune files in `user/` — the user controls that space.
 - `SOUL.md` is only modified with explicit user input.
 
 ## Language

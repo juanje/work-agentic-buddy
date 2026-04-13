@@ -84,7 +84,7 @@ Specific concepts that share an underlying pattern get abstracted into general c
 
 ```
 ├── AGENTS.md                    → Agent working memory. Loaded automatically.
-├── work/
+├── user/
 │   └── BOARD.md                 → Kanban board.
 ├── logs/                        → Daily conversation logs.
 │   └── archive/                 → Compacted old logs.

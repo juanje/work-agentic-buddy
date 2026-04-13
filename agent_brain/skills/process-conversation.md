@@ -60,8 +60,8 @@ Always update the `last_updated` timestamp in the frontmatter.
 ### 3. Verify captures
 
 Check that everything actionable from the conversation has been properly captured:
-- Tasks → `work/BOARD.md` (Inbox or appropriate section)
-- Concrete improvement ideas / tech debt → `work/BOARD.md` Parked
+- Tasks → `user/BOARD.md` (Inbox or appropriate section)
+- Concrete improvement ideas / tech debt → `user/BOARD.md` Parked
 - Unformed ideas / project concepts / draft proposals → `agent_brain/ideas/`
 - Decisions → `agent_brain/projects/` or `agent_brain/concepts/`
 - Lessons → `agent_brain/concepts/`

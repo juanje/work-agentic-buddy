@@ -40,7 +40,7 @@ Before starting the weekly review:
 - Run `jira-pending summary` to get current ticket status overview.
 - Run `jira-pending sprint` to see sprint ticket states.
 - Read logs from `logs/` for the current week.
-- Read `work/BOARD.md`.
+- Read `user/BOARD.md`.
 
 ### 2. Present the weekly summary
 
@@ -243,7 +243,7 @@ Scan brain files for staleness signals:
 ### 9. Git commit
 
 ```bash
-git add AGENTS.md agent_brain/ logs/ work/ && git commit -m "weekly: YYYY-WNN" 2>/dev/null || true
+git add AGENTS.md agent_brain/ logs/ user/ && git commit -m "weekly: YYYY-WNN" 2>/dev/null || true
 ```
 
 ### 10. Broader review mode
