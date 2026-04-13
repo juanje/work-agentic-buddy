@@ -100,8 +100,8 @@ Skills fall into two categories:
 
 **Core skills** (never pruned — they are the system's architecture):
 `process-conversation.md`, `daily-consolidation.md`, `weekly-review.md`,
-`monthly-maintenance.md`.
-
+`monthly-maintenance.md`, `run-standup.md`, `capture-item.md`, `next-task.md`,
+`sync-board.md`.
 **Learned skills** (subject to Hebbian pruning — everything else):
 Skills created by the agent during `/daily` consolidation based on
 observed patterns. These earned their place through repeated use, and
