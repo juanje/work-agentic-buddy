@@ -2,7 +2,7 @@
 
 A work companion that remembers everything you tell it. A self-organizing work memory built on Markdown files and any AI agent that can read them. Brain dump tasks, decisions, ideas, and context — the agent captures, organizes, and helps you stay on top of your work.
 
-> **Deprecation notice.** This project is being superseded by [Agentic Buddy](https://github.com/juanje/agentic-buddy) — the generic version with domain packs. New work instances should start from Agentic Buddy and apply the **work pack** during `/setup`. This repo remains functional for existing users but will not receive new features. See the [migration guide](https://github.com/juanje/agentic-buddy#migrating-from-an-existing-instance) for how to import your existing data.
+> **Deprecated.** This project is superseded by [Agentic Buddy](https://github.com/juanje/agentic-buddy) — the generic version with domain packs. New work instances should start from Agentic Buddy and apply the **work pack** during `/setup`. Existing instances can use `/update` to pull improvements from upstream, or `/import` to migrate data into a fresh Agentic Buddy instance. This repo will not receive new features.
 
 ## Table of contents
 
